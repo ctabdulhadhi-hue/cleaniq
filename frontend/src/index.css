@@ -1,0 +1,289 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    --brand-bg: #0a0a0c;
+    --brand-surface: #0c0c0e;
+    --brand-accent: #ff6a3d;
+    --brand-accent-hover: #ff7b50;
+    --brand-accent-tint: rgba(255, 106, 61, 0.12);
+    --brand-accent-preview-bg: rgba(255, 106, 61, 0.06);
+    --brand-accent-preview-border: rgba(255, 106, 61, 0.25);
+    --brand-text: #f2f2f0;
+    --brand-muted: #8a8a86;
+    --brand-subtle: #7a7a75;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --card-border: rgba(255, 255, 255, 0.08);
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #0a0a0c;
+    color: #f2f2f0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom Brand Token Utility Classes */
+.bg-brand-page {
+  background-color: #0a0a0c;
+}
+
+.bg-brand-surface {
+  background-color: #0c0c0e;
+}
+
+.bg-card-surface {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.border-card-border {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.text-brand-text {
+  color: #f2f2f0;
+}
+
+.text-brand-muted {
+  color: #8a8a86;
+}
+
+.text-brand-accent {
+  color: #ff6a3d;
+}
+
+.bg-brand-accent {
+  background-color: #ff6a3d;
+}
+
+/* Primary Button Design Token */
+.btn-primary {
+  background-color: #ff6a3d;
+  color: #0c0c0e;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: transform 0.15s ease, filter 0.15s ease, background-color 0.15s ease;
+  will-change: transform, filter;
+}
+.btn-primary:hover:not(:disabled) {
+  background-color: #ff7b50;
+  transform: scale(1.03);
+  filter: brightness(1.08);
+}
+.btn-primary:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+/* Secondary Button Design Token */
+.btn-secondary {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f2f2f0;
+  font-weight: 500;
+  border-radius: 10px;
+  transition: all 150ms ease-in-out;
+}
+.btn-secondary:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Preview Box Distinction for Cleaning Studio */
+.preview-box-orange {
+  background-color: rgba(255, 106, 61, 0.06);
+  border: 1px solid rgba(255, 106, 61, 0.25);
+  border-radius: 12px;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0c;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ==========================================================================
+   Step 13: Application-Wide Visual Effects & Motion Design
+   ========================================================================== */
+
+/* 1. Page Content Fade-In & Route Enter (opacity 0, translateY(8px) -> opacity 1, translateY(0), 0.4s ease) */
+@keyframes page-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-page-enter {
+  animation: page-enter 0.4s ease both;
+  will-change: opacity, transform;
+}
+
+/* 2. Sidebar Navigation Transitions */
+.sidebar-nav-item {
+  transition: background-color 0.2s ease, color 0.15s ease, border-color 0.2s ease;
+}
+.sidebar-nav-item:hover {
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+/* 3. Metric / KPI Cards (hover translateY(-2px), border brightens to rgba(255,255,255,0.14)) */
+.kpi-card {
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  will-change: transform, border-color;
+}
+.kpi-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.14) !important;
+}
+
+/* 4. Status Pills Pulse (opacity 1 -> 0.5 -> 1 with expanding fading ring, 2s ease-in-out infinite) */
+@keyframes status-dot-pulse {
+  0% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7);
+  }
+  50% {
+    opacity: 0.5;
+    box-shadow: 0 0 0 4px rgba(52, 211, 153, 0);
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(52, 211, 153, 0);
+  }
+}
+
+.status-dot-pulse {
+  animation: status-dot-pulse 2s ease-in-out infinite;
+  will-change: opacity, box-shadow;
+}
+
+/* 5. Page Hero Headline Blur-In Reveal (blur 14px -> 0, translateY 10px -> 0, 0.9s, cubic-bezier(0.2, 0.8, 0.2, 1)) */
+@keyframes hero-blur-in {
+  0% {
+    opacity: 0;
+    filter: blur(14px);
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0);
+  }
+}
+
+.animate-hero-blur-in {
+  animation: hero-blur-in 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  will-change: filter, transform, opacity;
+}
+
+/* 7. Empty States (Fade-in on mount + continuous subtle float translateY 0 -> -4px -> 0, 3s ease-in-out infinite) */
+@keyframes empty-state-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes empty-state-fade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.empty-state-card {
+  animation: empty-state-fade 0.4s ease both;
+}
+
+.empty-state-icon {
+  animation: empty-state-float 3s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* React Bits Split Text */
+@keyframes reactbits-split-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.97);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+/* Universal prefers-reduced-motion accessibility overrides */
+@media (prefers-reduced-motion: reduce) {
+  .animate-page-enter {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  .sidebar-nav-item,
+  .sidebar-nav-item:hover {
+    transition: none !important;
+  }
+
+  .kpi-card:hover {
+    transform: none !important;
+  }
+
+  .status-dot-pulse {
+    animation: none !important;
+    opacity: 1 !important;
+    box-shadow: 0 0 6px rgba(52, 211, 153, 0.8) !important;
+  }
+
+  .animate-hero-blur-in {
+    animation: none !important;
+    filter: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  .empty-state-card {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  .empty-state-icon {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .split-item {
+    animation: none !important;
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+  }
+}
+

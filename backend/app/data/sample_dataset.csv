@@ -1,0 +1,31 @@
+customer_id,name,email,age,department,salary,signup_date
+101,John Doe,john.doe@example.com,28,Sales,55000,2023-01-15
+102,Jane Smith,,34,sales,62000,2023-02-20
+103,Bob Johnson,bob.j@example.com,, SALES ,58000,2023-03-10
+104,Alice Williams,alice.w@example.com,29,Marketing,,2023-01-18
+105,Charlie Brown,,45,marketing,71000,2022-11-05
+106,Diana Prince,diana@example.com,31,Marketng,69000,2023-04-12
+107,Evan Wright,evan.w@example.com,52,Engineering,95000,2021-08-30
+108,Fiona Gallagher,,26,engineering,88000,2023-05-14
+109,George Clark,george@example.com,38,Eng,91000,2022-09-22
+110,Hannah Abbott,hannah@example.com,24,HR,52000,2023-06-01
+111,Ian Malcolm,,42,hr,54000,2022-12-15
+112,Julia Roberts,julia@example.com,,Human Resources,53000,2023-02-28
+113,Kevin Bacon,kevin@example.com,47,Sales,61000,2022-10-10
+113,Kevin Bacon,kevin@example.com,47,Sales,61000,2022-10-10
+114,Laura Croft,,29,Support,,2023-03-25
+115,Michael Scott,michael@example.com,43,sales,67000,2021-04-01
+116,Nina Simone,nina@example.com,36,Support,59000,2022-07-19
+117,Oscar Martinez,oscar@example.com,,Accounting,72000,2022-01-11
+118,Pam Beesly,pam@example.com,30,Sales,51000,2023-05-02
+118,Pam Beesly,pam@example.com,30,Sales,51000,2023-05-02
+119,Quinn Fabray,,23,Marketing,48000,2023-07-15
+120,Robert California,bob@example.com,55,Management,250000,2020-05-10
+121,Sam Winchester,sam@example.com,,Operations,64000,2022-08-14
+122,Tina Fey,tina@example.com,41,Operations,,2021-09-30
+123,Uma Thurman,,35,Engineering,93000,2022-06-18
+124,Victor Frankenstein,victor@example.com,220,engineering,99000,2020-10-31
+125,Wendy Darling,wendy@example.com,25,Sales,56000,2023-04-20
+125,Wendy Darling,wendy@example.com,25,Sales,56000,2023-04-20
+126,Xavier Woods,,33,HR,56000,2022-11-20
+127,Yvonne Strahovski,yvonne@example.com,32,Support,,2023-01-10

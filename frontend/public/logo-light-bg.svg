@@ -1,0 +1,5 @@
+<svg width="260" height="64" viewBox="0 0 260 64" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="8" width="48" height="48" rx="12" fill="#FF6A3D"/>
+  <path d="M14 32 L21.5 39.5 L36 20" stroke="#FFFFFF" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <text x="62" y="42" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="28" fill="#171717">Clean<tspan fill="#FF6A3D">IQ</tspan></text>
+</svg>
